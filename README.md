@@ -1,8 +1,8 @@
 # om-charts
 
-A POC project for the combinarion of React.js and d3.js via Om + Strokes
+A POC project for the combination of React.js and d3.js via Om + Strokes
 
-A clojurescriptzation of "D3 and React - the future of charting components?"
+A clojurescriptization of "D3 and React - the future of charting components?"
 that you can find [here](http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/).
 
 ## License
