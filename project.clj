@@ -12,7 +12,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2227"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [om "0.6.3"]]
+                 [om "0.6.3"]
+                 [net.drib/strokes "0.5.1"]]
   
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-ancient "0.5.5"]]
