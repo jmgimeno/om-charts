@@ -10,10 +10,10 @@
  :dev [:shared
        {:resources-paths ["dev-resources"]
         :source-paths ["dev-resources/tools/http" "dev-resources/tools/repl"]
-        :dependencies [[ring "1.2.1"]
-                       [compojure "1.1.6"]
+        :dependencies [[ring "1.3.0-RC1"]
+                       [compojure "1.1.8"]
                        [enlive "1.1.5"]]
-        :plugins [[com.cemerick/austin "0.1.3"]]
+        :plugins [[com.cemerick/austin "0.1.4"]]
         :cljsbuild
         {:builds {:om-charts
                   {:source-paths ["dev-resources/tools/repl"]
