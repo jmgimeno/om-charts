@@ -58,16 +58,20 @@
                    (.domain (apply array (range (count (:data data)))))
                    (.rangeRoundBands #js [0 (:width data)] 0.05))]
     (-> js/d3 (.select "#d3-chart")
-        (.append "svg")
-        (.attr #js {:width (:width data) :height (:height data)})
-        (.selectAll "bar")
+        (.selectAll ".bar")
         (.data (clj->js (:data data)))
         .enter (.append "rect")
+        (.attr "class" "bar")
         (.style "fill" "steelblue")
         (.attr "x" (fn [d i] (xScale i)))
         (.attr "y" (fn [d] (- (:height data) (yScale d))))
         (.attr "width" (.rangeBand xScale))
         (.attr "height" (fn [d] (yScale d))))))
+
+(defn clean-d3 []
+  (-> js/d3 (.select "#d3-chart")
+      (.selectAll ".bar")
+      .remove))
 
 (defn d3-chart [data owner]
   (reify
@@ -76,10 +80,11 @@
       (update-d3 data))
     om/IDidUpdate
     (did-update [this prev-props prev-state]
+      (clean-d3)
       (update-d3 data))
     om/IRender
     (render [this]
-      (dom/div #js {:width (:width data) :height (:height data) :id "d3-chart"}))))
+      (dom/svg #js {:width (:width data) :height (:height data) :id "d3-chart"}))))
 
 (defn d3-root [data owner]
   (om/component
