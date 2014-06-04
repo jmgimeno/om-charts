@@ -12,8 +12,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2227"]
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
-                 [om "0.6.3"]
-                 [net.drib/strokes "0.5.1"]]
+                 [om "0.6.3"]]
   
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-ancient "0.5.5"]]
@@ -24,7 +23,7 @@
                   ;; If nREPL takes too long to load it may timeout,
                   ;; increase this to wait longer before timing out.
                   ;; Defaults to 30000 (30 seconds)
-                  :timeout 60000
+                  :timeout 120000
                   }
 
   :cljsbuild
